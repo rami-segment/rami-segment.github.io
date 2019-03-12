@@ -24,8 +24,8 @@
     <textarea cols="81" name="details" required="" rows="10">
     </textarea> 
     <br><br> 
-    First Name: <input name="firstname" required="" size="75" type="text"/> 
-    Last Name: <input name="lastname" required="" size="75" type="text"/> 
+    First Name: <input name="firstName" required="" size="75" type="text"/> 
+    Last Name: <input name="lastName" required="" size="75" type="text"/> 
     <br><br> 
     Company: <input name="company" required="" size="75" type="text"/> 
     Email: <input name="email" required="" size="75" type="email"/> 
@@ -37,20 +37,26 @@
         e.preventDefault();
         var form = e.target;
         var email = form["email"].value;
-        var firstname = form["firstname"].value;
-        var lastname = form["lastname"].value;
+        var firstName = form["firstName"].value;
+        var lastName = form["lastName"].value;
         var company = form["company"].value;
         var destination = form["destination"].value;
         var details = form["details"].value;
         var user = {
             email: email, 
-            name: fullname, 
+            firstName: firstName,
+            lastName: lastName,
+            company: company, 
             destination: destination, 
             details: details
         };
         analytics.identify('l1y4LQ8Sx20e6gvE3NneQAugWlomikrE', {
             email: email, 
-            name: fullname
+            firstName: firstName,
+            lastName: lastName,
+            company: {
+                "name": company
+            }
         });
         analytics.track('destination submitted', user, function() {
             window.location.href = "";
