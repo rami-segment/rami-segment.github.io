@@ -53,31 +53,27 @@
 /*        var integrations = {
             "Salesforce" : true
         };*/
-  
+
         analytics.identify( email , 
             {
                 email: email, 
                 firstName: firstName,
-                lastName: lastName
-/*            company: {
-                "name": company
-            }*/
-            },
-            {
-                integrations: {
+                lastName: lastName,
+                company: company
+            
+            },{
+                'integrations': {
                     "Salesforce": true
                 }
-            }
+            });
 
-        );
-
-/*        analytics.track('destination submitted', user, {
-            integrations: {
+        analytics.track('destination submitted', user, /*{
+            'integrations': {
                 "Salesforce": true
             }
-        } , function() {
+        } , */function() {
             window.location.href = "";
-        });*/
+        });
       }
       
 </script>
