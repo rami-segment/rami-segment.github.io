@@ -10,11 +10,16 @@
   }}();
 </script>
 
+<script src="infinite-scroll/dist/infinite-scroll.pkgd.min.js"></script>
 
 </head> 
 <body> 
 <h1>What is your favorite place to travel?</h1> 
-<p>I am building a directory of the sweetest travel destinations.</p>  
+<p>I am building a directory of the sweetest travel destinations.</p>
+
+<!-- <div class="container">  --> 
+<div class="container"
+  data-infinite-scroll='{ "path": ".pagination__next", "append": ".post", "history": false }'>
 <form name="travel" onsubmit="identify(event)">
      What is your favorite travel destination?
     <input name="destination" required="" size="81" type="text"/> 
@@ -50,9 +55,6 @@
             destination: destination, 
             details: details
         };
-/*        var integrations = {
-            "Salesforce" : true
-        };*/
 
         analytics.identify( email , 
             {
@@ -76,6 +78,7 @@
         });
       }
       
-</script>
+    </script>
+</div>
 </body> 
 </html>
